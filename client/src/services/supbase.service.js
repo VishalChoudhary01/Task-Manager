@@ -1,4 +1,3 @@
-// services/supabase.service.js
 import supabase from '../supabase-client';
 
 export const getAllTasks = async () => {
@@ -17,7 +16,6 @@ export const createTask = async (taskData) => {
   return { data, error };
 };
 
-// Optional: Add more functions as needed
 export const updateTaskStatus = async (id, completionStatus) => {
   const { data, error } = await supabase
     .from('tasks')

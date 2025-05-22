@@ -1,5 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100..900&display=swap');
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
-@theme{
-  
+
+
+@theme {
+  --color-background: #ECFAE5;
+  --color-surface: #DDF6D2;
+
+  /* Brand color */
+  --color-brand: #B0DB9C;
+  --color-brand-hover: #A0CB8C;
+  --color-brand-focus: #CAE8BD;
+  --color-brand-contrast: #ffffff;
+
+  /* Navbar */
+  --color-NavBg: #DDF6D2;
+
+  /* Toggle */
+  --color-ToggleKnob: #948979;
+  --color-ToggleBg: #CAE8BD;
+  --color-ToggleBg2: #DDF6D2;
+  --color-ToggleBg3: #B0DB9C;
+
+  /* Card */
+  --color-card-bg: var(--color-surface);
+
+  /* Glass */
+  --color-glass-bg: rgba(255, 255, 255, 0.85);
+
+  /* Heading */
+  --color-heading1: #393E46; 
+  --color-heading2: #4a4a4a;
+  --color-heading3: #5e5e5e;
+  --color-subheading1: #636e72;
+  --color-subheading2: #7f8c8d;
+
+  /* Paragraphs */
+  --color-paragraph: #393E46;
+  --color-paragraph2: #57606f;
+  --color-paragraph3: #747d8c;
+
+  --color-accent: var(--color-brand);
+  --color-dark-accent: var(--color-dark-brand);
+
+  /* Button */
+  --color-button-bg: var(--color-brand);
+  --color-button-text: var(--color-brand-contrast);
+  --color-button-hover: var(--color-brand-hover);
+  --color-button-disabled-bg: #bdc3c7;
+  --color-button-disabled-text: #7f8c8d;
+
+  /* Input Fields - Light Theme */
+  --color-input-bg: #ffffff;
+  --color-input-text: #2d3436;
+  --color-input-placeholder: #b2bec3;
+  --color-input-border: rgba(0, 0, 0, 0.2);
+  --color-input-focus-border: #B0DB9C;
+  --color-input-disabled-bg: #ecf0f1;
+  --color-input-disabled-text: #7f8c8d;
+
+  /* Link */
+  --color-link: #021bb7;
+  --color-link-hover: var(--color-brand-hover);
+
+  /* Borders & Lines */
+  --color-border: rgba(0, 0, 0, 0.1);
+  --color-hr-line: rgba(0, 0, 0, 0.08);
+
+  /* Shadows */
+  --color-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --color-text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+
+  /* Dark Theme */
+  --color-dark-brand: #948979;
+  --color-dark-brand-hover: #A59A8A;
+  --color-dark-brand-focus: #B6AC9B;
+  --color-dark-brand-contrast: #ffffff;
+
+  --color-dark-background: #222831;
+  --color-dark-surface: #393E46;
+
+  /* Navbar */
+  --color-NavDarkBg: #dde8f9;
+
+  /* Toggle */
+  --color-darkToggleKnob: #DFD0B8;
+  --color-darkToggleBg: #948979;
+
+  /* Card */
+  --color-dark-card-bg: var(--color-dark-surface);
+
+  /* Glass */
+  --color-dark-glass-bg: rgba(32, 32, 32, 0.7);
+
+  /* Heading */
+  --color-dark-heading1: #ffffff;
+  --color-dark-heading2: #e0e0e0;
+  --color-dark-heading3: #c0c0c0;
+  --color-dark-subheading1: #b0b0b0;
+  --color-dark-subheading2: #909090;
+
+  /* Paragraph */
+  --color-dark-paragraph: #DFD0B8;
+  --color-dark-paragraph2: #bfae97;
+  --color-dark-paragraph3: #a89b88;
+
+  /* Button */
+  --color-dark-button-bg: var(--color-dark-brand);
+  --color-dark-button-text: var(--color-dark-brand-contrast);
+  --color-dark-button-hover: var(--color-dark-brand-hover);
+  --color-dark-button-disabled-bg: #404040;
+  --color-dark-button-disabled-text: #6b6b6b;
+
+  /* Input Fields - Dark Theme */
+  --color-dark-input-bg: #2d2d2d;
+  --color-dark-input-text: #DFD0B8;
+  --color-dark-input-placeholder: #888888;
+  --color-dark-input-border: rgba(255, 255, 255, 0.15);
+  --color-dark-input-focus-border: #948979;
+  --color-dark-input-disabled-bg: #1e1e1e;
+  --color-dark-input-disabled-text: #6b6b6b;
+
+  /* Link */
+  --color-dark-link: #04409a;
+  --color-dark-link-hover: #011b43;
+
+  /* Borders */
+  --color-dark-border: rgba(255, 255, 255, 0.1);
+
+  /* Horizontal Line */
+  --color-dark-hr-line: rgba(255, 255, 255, 0.08);
+
+  /* Shadows */
+  --color-dark-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  --color-dark-text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+
+  /* Fonts */
+  --font-Lora: "Lora", serif;
+  --font-NotoSerif: "Noto Serif", serif;
+  --font-Poppins: "Poppins", sans-serif;
+  --font-RobotoSlab: "Roboto Slab", serif;
+
+  --animate-underlineExpand: underlineExpand 0.6s ease-in forwards;
+  @keyframes underlineExpand {
+    0% {
+      transform: scaleX(0);
+      transform-origin: left;
+    }
+    50% {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+  }
+}
+
+c{
+    color:#021bb7;
 }
